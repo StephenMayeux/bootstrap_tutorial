@@ -17,13 +17,13 @@ var possibleMatch= {
 
 $('#loveButton').on('click', function() {
   if (myLoveProfile.currentCity === possibleMatch.currentCity && myLoveProfile.single && possibleMatch.single) {
-  	$('h1').('You are a match!');
+  	$('h1').text('You are a match!');
   } else if (myLoveProfile.currentCity !== possibleMatch.currentCity && myLoveProfile.single && possibleMatch.single) {
   	$('h1').text('Do you like long distance?');
   } else if (!myLoveProfile.single && myLoveProfile.currentCity !== possibleMatch.currentCity) {
   	$('h1').text('You are a cheater!!');
   } else {
-  	$('.message').append('<h1 style="color: red">You are not a match</h1>');
+  	$('.message').append("<h2 style='color: red;'>No match!</h2");
   }
 });
 
