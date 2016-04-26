@@ -1,12 +1,25 @@
 $(document).ready(function() {
 var koreanCities = ["Busan", "Seoul", "Masan", "Daegu", "Gimhae", "Ulsan", "Jejudo"];
 
+/*
+In order to calculate the Korean age with the JavaScript 'this' keyword
+we have to create a method (i.e. a function inside an object). When 'this' is
+used inside of an object, it refers to the GLOBAL OBJECT, which would be the
+browser window. There is no .age property of the global object, so my old code
+always returned undefined. Now if we use 'this' inside of a method, then it will
+refer to the intended object, in this case myLoveProfile.
+*/
+
 var myLoveProfile = {
 	name: "Stephen",
 	single: false,
 	age: 29,
+	koreanAge: function() {
+		return this.age + 1;
+	},
 	currentCity: koreanCities[0]
 };
+console.log(myLoveProfile.koreanAge());
 
 var possibleMatch= {
 	name: "Ji-yeon",
